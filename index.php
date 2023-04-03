@@ -9,7 +9,7 @@
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
-<body class="d-flex justify-content-center align-items-center vh-100"> 
+<body> 
         <div class="w-400 p-5 shadow rounded"> 
             <form method="post" action="app/http/autenticacao.php">
                 <div class="d-flex justify-content-center align-items-center flex-column">
@@ -24,7 +24,7 @@
                             <input type="password" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Entre</button>
-                        <a href="inscreva-se.php">Inscreva-se</a>
+                        <a href="cadastro.php">Inscreva-se</a>
                 </div>
             </form> 
     </div>       

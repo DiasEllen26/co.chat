@@ -5,29 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>co.chat</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
-<body class="d-flex justify-content-center align-items-center vh-100"> 
+<body"> 
         <div class="w-400 p-5 shadow rounded"> 
             <form method="post" action="app/http/cadastro.php">
                 <div class="d-flex justify-content-center align-items-center flex-column">
                     <img src="./imagens/logo.png" alt="chat.io "class ="w-20">    
                         <h3 class="display-4 fs-1 text-center">Cadastre-se</h3>
-                        <?php if (isset($_GET['error'])) { ?>    
-                        <div class="alert alert-warning" role="alert">
-                              <?php echo htmlspecialchars($_GET['error']); ?>
-                            </div>
-                            <?php }
-                            if (isset($_GET['nome'])) {
-                                $nome = $_GET['nome'];
-                            }else $nome = '';
-                        ?>
+                    
                             <div class="mb-3">
                                 <label class="form-label">Nome</label>
-                                <input type="text" class="form-control" name="nome" value = "<?=$nome?>" >
-                            </div>
+                                <input type="text" class="form-control" name="nome">
                             <div class="mb-3">
                                 <label class="form-label">Username</label>
                                 <input type="text" class="form-control" name="username">
