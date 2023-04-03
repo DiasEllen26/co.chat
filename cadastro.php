@@ -15,21 +15,35 @@
                 <div class="d-flex justify-content-center align-items-center flex-column">
                     <img src="./imagens/logo.png" alt="chat.io "class ="w-20">    
                         <h3 class="display-4 fs-1 text-center">Cadastre-se</h3>
-                    
+                        <?php if (isset($_GET['error'])) { ?>    
+                        <div class="alert alert-warning" role="alert">
+                              <?php echo htmlspecialchars($_GET['error']); ?>
+                            </div>
+                            <?php }
+                            if (isset($_GET['nome'])) {
+                                $nome = $_GET['nome'];
+                                }else{ $nome = ""; }
+                            if (isset($_GET['username'])) {
+                                $username = $_GET['username'];
+                                }else{ $username = "";}
+                            if (isset($_GET['senha'])) {
+                                $senha = $_GET['senha'];
+                                }else{ $senha = "";}
+                            ?>
                             <div class="mb-3">
                                 <label class="form-label">Nome</label>
-                                <input type="text" class="form-control" name="nome">
+                                <input type="text" class="form-control" name="nome" value ="<?=$nome?>">
                             <div class="mb-3">
                                 <label class="form-label">Username</label>
-                                <input type="text" class="form-control" name="username">
+                                <input type="text" class="form-control" name="username" value="<?=$username?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Senha</label>
-                                <input type="password" class="form-control" nome="senha">
+                                <input type="password" class="form-control" name="senha" value="<?=$senha?>">
                             </div>
                             <div class="mb-3">
                                 <label class="form-label">Avatar</label>
-                                <input type="file" class="form-control" nome="avatar">
+                                <input type="file" class="form-control" name="avatar">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Inscrever</button>
