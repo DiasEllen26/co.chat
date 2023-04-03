@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>co.chat</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body class="d-flex justify-content-center align-items-center vh-100"> 
         <div class="w-400 p-5 shadow rounded"> 
-            <form>
+            <form method="post" action="app/http/autenticacao.php">
                 <div class="d-flex justify-content-center align-items-center flex-column">
-                    <img src="./imagens/logo.png" alt="chat.io">    
+                    <img src="./imagens/logo.png" alt="chat.io "class ="w-30">    
                     <h3 class="display-4 fs-1 text-center">LOGIN</h3>
                         <div class="mb-3">
                             <label class="form-label">Login</label>
@@ -24,7 +24,7 @@
                             <input type="password" class="form-control">
                         </div>
                         <button type="submit" class="btn btn-primary">Entre</button>
-                        <a href="cadastro.php">Cadastre-se</a>
+                        <a href="inscreva-se.php">Inscreva-se</a>
                 </div>
             </form> 
     </div>       
