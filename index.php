@@ -10,24 +10,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
 </head>
 <body> 
-        <div class="login w-400 p-5 shadow rounded"> 
-            <form method="post" action="app/http/autenticacao.php">
-                <div class="d-flex justify-content-center align-items-center flex-column">
-                    <img src="./imagens/logo.png" alt="chat.io "class ="w-30">    
-                    <h3 class="display-4 fs-1 text-center">LOGIN</h3>
-                        <div class="mb-3">
-                            <label class="form-label">Login</label>
-                            <input type="text" class="form-control">
+    <section class="login">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">    
+            <div class="col col-xl-10">
+                <div class="card">
+                    <div class="row g-0">
+                        
+                        <div class="box col-md-6 col-lg-5 d-none d-md-block">
+                        <img src="./imagens/logo.png" alt="login" class="img-fluid">
                         </div>
-                        <div class="mb-3">
-                            <label class="form-label">Senha</label>
-                            <input type="password" class="form-control">
+                        
+                    <div class="col-md-6 col-lg-5 d-flex align-items-center">
+                        <div class="card-body p-4 p-lg-5 text-black">       
+                                <div class="d-flex align-items-center mb-3 pb-1">
+                        
                         </div>
-                        <button type="submit" class="btn btn-primary">Entre</button>
-                        <a href="cadastro.php">Inscreva-se</a>
-                </div>
-            </form> 
-    </div>       
+                        <h5 class="fw-normal mb-3 pb-3">Seja bem vindo!</h5>
+                        <div class="form-outline mb-4">
+                            <input type="email" id="form2" class="form-control form-control-lg" >
+                            <label class="form-label" for="form">Username</label>
+                        </div>
+                        <div class="form-outline mb-4">
+                            <input type="password" id="form2" class="form-control form-control-lg">
+                            <label class="form-label" for="form2">Senha</label>
+                        </div>
+                        <div class="pt-1 mb-4">
+                            <button class="btn1" type="button">Login</button>
+                        </div>
+                        <p class="mb-5 pb-lg-2" style="color: #393f81;">Ainda não têm conta? 
+                        <a href="cadastro.php" style="color: #393f81;">Se inscreva aqui</a></p>
+                        </form>
+                    </div>
+                    </div>
+            </div>
+            </div>   
 
     <script src="./js/script.js"></script>
     <!-- Scripts Bootstrap -->

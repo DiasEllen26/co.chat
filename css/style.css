@@ -1,3 +1,62 @@
-.login {
-    
+@import url('https://fonts.cdnfonts.com/css/elasis');
+@import url('https://fonts.googleapis.com/css2?family=Caramel&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+*{
+    font-family: Ubuntu ;
 }
+.login {
+    background-image: linear-gradient(to right top, #ffffff, #cac7e3, #9591c7, #5d60ac, #003390);
+}
+.card {
+    border-radius: 1rem;
+    box-shadow:4px 12px 50px 16px rgba(0,0,0,0.49);
+}
+.box {
+    background-color: #f7ebeb;
+}
+    .img-fluid {
+    border-radius: 1rem 0 0 1rem;
+    margin-top: 100px;
+    width: 400px;
+    height: 600px;
+}
+.logo {
+font-family: elasis,"trebuchet MS", sans-serif;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3.6pt;
+    word-spacing: -11.6pt;
+    line-height: 1.1;
+    color: #62CDFF;
+
+}
+form{
+    background: rgba( 255, 255, 255, 0.8 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 20px );
+-webkit-backdrop-filter: blur( 20px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.fw-normal {
+    letter-spacing: 1px;
+    font-size: 30px;
+    font-weight: bold;
+}
+.btn1 {
+    height: 50px;
+    width: 40%;
+    outline: none;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+    background-color:#378de5;
+    border-radius: 50px;
+    transition: all 0.4s;
+}
+.btn1:hover {
+        background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+}
+.btn1:active {
+        position:relative;
+        top:1px;
+    }
