@@ -31,7 +31,7 @@
                                 }else{ $senha = "";}
                             ?>
                             <div class="mb-3">
-                                <label class="form-label">Nompe</label>
+                                <label class="form-label">Nome</label>
                                 <input type="text" class="form-control" name="nome" value ="<?=$nome?>">
                             <div class="mb-3">
                                 <label class="form-label">Username</label>
