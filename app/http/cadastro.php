@@ -31,7 +31,7 @@ if (isset($_POST['username']) &&
                 $stmt->execute([$username]);
                     if ($stmt->rowCount() > 0) {
                         $erro = "O username ($username) está indisponível";
-                        header("Locattion: ../../cadastro.php?error=$erro&$data");
+                        header("Location: ../../cadastro.php?error=$erro&$data");
                         exit;
                     } else {
                         // foto de perfil carregada
