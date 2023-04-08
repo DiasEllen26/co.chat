@@ -1,4 +1,6 @@
 <?php
+session_start();
+
     if (isset($_POST['username']) &&
         isset($_POST['senha'])) {
         //conexão com banco de dados
@@ -28,18 +30,18 @@
                     if (password_verify($senha, $usuario['senha'])){
                         $_SESSION['username'] = $usuario['username'];
                         $_SESSION['nome'] = $usuario['nome'];
-                        $_SESSION['user_id'] = $usuario['user_id'];
+                        $_SESSION['id'] = $usuario['id'];
 
                         //redirecionando para 'home.php';
                         header("Location: ../../home.php");
                     }else{
                         $erro = "Incorreto username ou senha";
-                        header("Location:../../index.php?error=$erro");
+                        header("Location: ../../index.php?error=$erro");
                         }
-                    }else{
-                        $erro = "Incorre username ou senha";
-                        header("Location:../../index.php?error=$erro");
-                 }
+                    }
+                 }else{
+                        $erro = "Incorreta username ou senha";
+                        header("Location: ../../index.php?error=$erro");
             }
         }
     } else {
