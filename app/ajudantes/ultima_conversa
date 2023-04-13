@@ -1,0 +1,20 @@
+<?php 
+
+function ultimaConversa($id_1, $id_2, $con){
+   
+   $sql = "SELECT * FROM chats
+           WHERE (para_id=? AND de_id=?)
+           OR    (de_id=? AND para_id=?)
+           ORDER BY chat_id DESC LIMIT 1";
+    $stmt = $con->prepare($sql);
+    $stmt->execute([$id_1, $id_2, $id_1, $id_2]);
+
+    if ($stmt->rowCount() > 0) {
+    	$chat = $stmt->fetch();
+    	return $chat['messagem'];
+    }else {
+    	$chat = '';
+    	return $chat;
+    }
+
+}

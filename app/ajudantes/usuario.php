@@ -1,5 +1,5 @@
 <?php
-function getUsuario($username, $con){
+function getUser($username, $con){
     $sql = "SELECT * FROM users WHERE username=?";
     $stmt = $con->prepare($sql);
     $stmt->execute([$username]);

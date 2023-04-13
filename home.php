@@ -4,8 +4,8 @@
         //conexão com banco de dados
         include './app/http/config.php';
         include './app/ajudantes/usuario.php';
-        include'./app/ajudantes/conversa.php';
-        $usuario = getUsuario($_SESSION['username'], $con);
+        include './app/ajudantes/conversa.php';
+        $usuario = getUser($_SESSION['username'], $con);
  
         $conversa = getConversa($usuario['id'], $con);
         print_r($conversa);
@@ -27,8 +27,8 @@
 
         <div class="d-flex mb-3 p-3 bg-light justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-                <img src="./uploads/<?=$usuario['avatar']?>" class="w-2 rounded-circle">
-                <h3 class="fs-xs m-2"><?=$usuario['nome']?></h3>            
+                <img src="./uploads/<?=$username['avatar']?>" class="w-2 rounded-circle">
+                <h3 class="fs-xs m-2"><?=$username['nome']?></h3>            
             </div>
             <a href="./sair.php" class="btn btn-dark">Sair</a>
         </div>
