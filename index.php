@@ -42,7 +42,7 @@
                             <input type="password" class="form-control" name="senha">
                         </div>
                         <button type="submit" class="btn btn-primary">Entre</button>
-                        <a href="cadastro.php">Cadastre-se</a>
+                        <a href="cadastro.php" type="submit">Cadastre-se</a>
                 </div>
             </form> 
     </div>       

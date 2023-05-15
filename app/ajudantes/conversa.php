@@ -2,31 +2,27 @@
 function getConversa($id, $con){
 
     $sql = "SELECT * FROM conversa WHERE usuario_1=? OR usuario_2=? ORDER BY id DESC";
+    $dados = $con->prepare($sql);
+    $dados->execute([$id, $id]);
 
-    $stmt = $con->prepare($sql);
-    $stmt->execute([$id, $id]);
-
-    if($stmt->rowCount() > 0) {
-        $conversa = $stmt->fetchAll();
+    if($dados->rowCount() > 0) {
+        $conversas = $dados->fetchAll();
         $usuario_data = [];
 
-        foreach($conversa as $conversa) {
+        foreach($conversas as $conversa) {
             if($conversa['usuario_1'] == $id) {
-                $sql2 = "SELECT nome, username, avatar, visto FROM useres WHERE id=?";
-                $stmt2 = $con->prepare($sql2);
-                $stmt->execute([$conversa['usuario_2']]);
+                $sql = "SELECT * FROM users WHERE id=?";
+                $dados = $con->prepare($sql);
+                $dados->execute([$conversa['usuario_2']]);
             }else {
-                $sql2 = "SELECT nome, username, avatar, visto FROM useres WHERE id=?";
-                $stmt2 = $con->prepare($sql2);
-                $stmt->execute([$conversa['usuario_1']]);
+                $sql = "SELECT * FROM users WHERE id=?";
+                $dados = $con->prepare($sql);
+                $dados->execute([$conversa['usuario_1']]);
             }
-    
-            $TodasConversas = $stmt2->fetchAll();
-
-            array_push($usuario_data, $TodasConversas);
+            $TodasConversas = $dados->fetchAll();
+            array_push($usuario_data, $TodasConversas[0]);
         }
         return $usuario_data;
-     
     }else{
         $conversa = [];
         return $conversa;

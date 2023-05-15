@@ -1,3 +1,7 @@
+<?php
+    session_start();
+    if(isset($_SESSION['username'])) {
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -59,3 +63,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.min.js" integrity="sha384-heAjqF+bCxXpCWLa6Zhcp4fu20XoNIA98ecBC1YkdXhszjoejr5y9Q77hIrv8R9i" crossorigin="anonymous"></script>
 </body>
 </html>
+<?php 
+    }else{
+        header("Location: ./home.php");
+        exit;
+    }
+?>

@@ -5,10 +5,10 @@
         include './app/http/config.php';
         include './app/ajudantes/usuario.php';
         include './app/ajudantes/conversa.php';
+        include './app/ajudantes/tempo.php';
+
         $usuario = getUser($_SESSION['username'], $con);
- 
         $conversa = getConversa($usuario['id'], $con);
-        print_r($conversa);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,8 +27,8 @@
 
         <div class="d-flex mb-3 p-3 bg-light justify-content-between align-items-center">
             <div class="d-flex align-items-center">
-                <img src="./uploads/<?=$username['avatar']?>" class="w-2 rounded-circle">
-                <h3 class="fs-xs m-2"><?=$username['nome']?></h3>            
+                <img src="./uploads/<?=$usuario['avatar']?>" class="w-25 rounded-circle">
+                <h3 class="fs-xs m-2"><?=$usuario['nome']?></h3>            
             </div>
             <a href="./sair.php" class="btn btn-dark">Sair</a>
         </div>
@@ -39,26 +39,64 @@
                 <i class="fa fa-search"></i>
             </button>
         </div>
-        <ul class="list-group mvh-50 overflow-auto">
-            <li class="list-group-item">
-                <a href="./chat.php" class="d-flex justify-content-center align-items-center p-2">
-                    <div class="d-flex align-items-center">
-                        <img src="./uploads/userdefault.png" class="v-10 rounded">
-                        <h3 class="fs-xs m-2">Nome</h3>
-                    </div>
-                </a>
-            </li>
+
+        <ul id="chatLista" class="list-group mvh-50 overflow-auto">
+            <?php if(empty($conversas)) {
+                
+                foreach ($conversa as $conversa) {  ?>
+                    <li class="list-group-item">
+                            <a href="./chat.php?user=<?=$conversa['username']?>" class="d-flex justify-content-center align-items-center p-2">
+                                <div class="d-flex align-items-center">
+                                    <img src="./uploads/<?=$conversa['avatar']?>" class="v-10 rounded-circle">
+                                    <h3 class="fs-xs m-2"><?=$conversa['nome']?>
+                                        <small>
+                                            <?php
+                                              //  echo ultimoChat($_SESSION['id'], $conversa['id'],$con); 
+                                            ?>
+                                        </small>
+                                    </h3>
+                                </div>
+                                <?php
+                                 if (ultimovisto($conversa['visto']) == "Ativo") { ?>
+                                    <div class="online">
+                                        <div class="online"></div>
+                                    </div>
+                                    <?php } 
+                                ?>
+                            </a>
+                        </li>
+                <?php }
+            }else{ ?>
+                <div class="alert alter-info text-center"> 
+                    <i class="fa fa-comments d-block fs-big"></i> 
+                    Nenhuma mensagem, iniciar conversa
+                </div>
+            <?php }?>
         </ul>
-    </div>
-        
+        </div>
+    </div>       
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+           //atualização automática vista pela última vez para usuário logado
+            let lastSeenUpdate = function(){
+                $.get("app/ajax/visto_ultimo.php",
+                );
+            }
+        lastSeenUpdate();
+        //a atualização automática é vista a cada 10 segundos
+        setInterval(lastSeenUpdate, 100000);
+    })
+    </script>
 
 
 </body>
 </html>
-
 <?php
     }else{
-        header("Location: ./index.php");
+       header("Location: index.php");
         exit;
     }
 ?>
