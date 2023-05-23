@@ -51,7 +51,7 @@ if (isset($_SESSION['username'])) {
                         <li class="list-group-item">
                             <a href="./chat.php?user=<?= $conversa['username'] ?>" class="d-flex justify-content-center align-items-center p-2">
                                 <div class="d-flex align-items-center">
-                                    <img src="./uploads/<?= $conversa['avatar'] ?>" class="v-10 rounded-circle">
+                                    <img src="./uploads/<?= $conversa['avatar'] ?>" class="w-25 rounded-circle">
                                     <h3 class="fs-xs m-2"><?= $conversa['nome'] ?>
                                         <small>
                                             <?php
