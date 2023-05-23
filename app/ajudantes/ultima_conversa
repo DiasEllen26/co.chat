@@ -6,11 +6,11 @@ function ultimaConversa($id_1, $id_2, $con){
            WHERE (para_id=? AND de_id=?)
            OR    (de_id=? AND para_id=?)
            ORDER BY chat_id DESC LIMIT 1";
-    $stmt = $con->prepare($sql);
-    $stmt->execute([$id_1, $id_2, $id_1, $id_2]);
+    $dados = $con->prepare($sql);
+    $dados->execute([$id_1, $id_2, $id_1, $id_2]);
 
-    if ($stmt->rowCount() > 0) {
-    	$chat = $stmt->fetch();
+    if ($dados->rowCount() > 0) {
+    	$chat = $dados->fetch();
     	return $chat['messagem'];
     }else {
     	$chat = '';

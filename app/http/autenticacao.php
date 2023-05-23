@@ -40,7 +40,7 @@ session_start();
                         }
                     }
                  }else{
-                        $erro = "Incorreta username ou senha";
+                        $erro = "Incorreto username ou senha";
                         header("Location: ../../index.php?error=$erro");
             }
         }

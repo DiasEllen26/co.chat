@@ -1,20 +1,37 @@
 @import url('https://fonts.cdnfonts.com/css/elasis');
 @import url('https://fonts.googleapis.com/css2?family=Caramel&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
-*{
-    font-family: Ubuntu ;
+
+* {
+    font-family: Ubuntu;
 }
 
+.chat {
+    background: rgb(111,93,255);
+    background: linear-gradient(90deg, rgba(111,93,255,1) 7%, rgba(0,254,255,1) 91%);
+    margin: 5px;
+    padding: 5px;
+}
+.form{
+    box-shadow: 0 10px 32px 0 rgba( 31, 38, 135, 0.37 );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+.logo{
+    max-width: 300px;
+    margin: 5px;
+}
 .card {
     border-radius: 1rem;
 }
+
 .img-fluid {
     border-radius: 1rem 0 0 1rem;
     width: 400px;
     height: 500px;
     margin-top: -30px;
 }
+
 .logo {
-font-family: elasis,"trebuchet MS", sans-serif;
+    font-family: elasis, "trebuchet MS", sans-serif;
     font-size: 25px;
     font-weight: bold;
     letter-spacing: 3.6pt;
@@ -22,17 +39,20 @@ font-family: elasis,"trebuchet MS", sans-serif;
     line-height: 1.1;
     color: #62CDFF;
 }
-.card-body{
+
+.card-body {
     margin-top: -80px;
 }
-form{
-    background: rgba( 255, 255, 255, 0.8 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 20px );
-    -webkit-backdrop-filter: blur( 20px );
+
+form {
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
 }
+
 .fw-normal {
     letter-spacing: 1px;
     font-size: 30px;
@@ -44,30 +64,105 @@ form{
     height: 50px;
     width: 40%;
     outline: none;
-    border: 1px solid #ffffff;
+    border: 1px solid #fff;
     color: #ffffff;
-    background:linear-gradient(to bottom, #5400cb 5%, #0037ff 100%);
-    background-color: #ffffff;
+    background: #3289c8;
     border-radius: 50px;
     transition: all 0.4s;
+    margin: 4px;
 }
+
 .btn1:hover {
-    background:linear-gradient(to bottom, #0037ff 5%, #5400cb 100%);
+    background: linear-gradient(to bottom, #0037ff 5%, #5400cb 100%);
 }
+
 .btn1:active {
-    position:relative;
-    top:1px;
+    position: relative;
+    top: 1px;
 }
-.w-400{
+
+.w-400 {
     width: 400px;
 }
-.fs-xs{
+
+.fs-xs {
     font-size: 1rem;
 }
 
-.v-10{
+.w-10 {
     width: 10px;
 }
+
 a {
     text-decoration: none;
+}
+
+fs-big {
+    font-size: 5rem !important;
+}
+
+.online {
+    width: 10px;
+    height: 10px;
+    background: green;
+    border-radius: 50%;
+}
+
+.w-15 {
+    width: 15%;
+}
+
+.fs-sm {
+    font-size: 1.4rem;
+}
+
+small {
+    color: #bbb;
+    font-size: 0.7rem;
+    text-align: right;
+}
+
+.chat-box {
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-height: 50vh;
+}
+
+.rtext {
+    width: 65%;
+    background: #f8f9fa;
+    color: #444;
+}
+
+.ltext {
+    width: 65%;
+    background: #3289c8;
+    color: #fff;
+}
+
+/* width */
+*::-webkit-scrollbar {
+    width: 3px;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+    background: #aaa;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+    background: #3289c8;
+}
+
+textarea {
+    resize: none;
+}
+.avatar img{
+    width: 10px;
 }
